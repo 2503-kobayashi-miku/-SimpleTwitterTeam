@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
+
 import chapter6.beans.User;
 import chapter6.beans.UserComment;
 import chapter6.beans.UserMessage;
@@ -18,7 +20,7 @@ import chapter6.service.MessageService;
 @WebServlet(urlPatterns = { "/index.jsp" })
 public class TopServlet extends HttpServlet {
 
-	@Override 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		boolean isShowMessageForm = false;
 		User user = (User) request.getSession().getAttribute("loginUser");
